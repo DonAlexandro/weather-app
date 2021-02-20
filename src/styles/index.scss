@@ -1,0 +1,31 @@
+@import "~antd/dist/antd.css";
+@import "mixins";
+
+.layout {
+    @include center-content;
+
+    min-height: 100vh;
+
+    .weather-card {
+        width: 60%;
+
+        .main-info-wrapper {
+            h1 {
+                font-size: 6rem;
+                margin-bottom: 0;
+            }
+
+            h5 {
+                margin-bottom: 0;
+            }
+
+            h1, h5, h3 {
+                margin-top: 0;
+            }
+
+            h4 {
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}
