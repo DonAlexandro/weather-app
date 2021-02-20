@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card, Col, Divider, Layout, Row, Typography} from 'antd'
 import Search from 'antd/es/input/Search'
-import {AntCloudOutlined} from '@ant-design/icons/lib'
+import {CloudTwoTone} from '@ant-design/icons/lib'
 
 const {Title, Text} = Typography
 
@@ -31,7 +31,7 @@ export const App: React.FC = () => {
 							<Title level={3}>Cloudy</Title>
 						</Col>
 						<Col span={12}>
-							<Title style={{textAlign: 'right'}} type="secondary"><AntCloudOutlined /></Title>
+							<Title style={{textAlign: 'right'}}><CloudTwoTone /></Title>
 							<Title level={3} style={{textAlign: 'right'}}>--/-2°</Title>
 						</Col>
 					</Row>
