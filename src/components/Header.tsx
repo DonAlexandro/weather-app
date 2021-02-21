@@ -1,18 +1,28 @@
 import React from 'react'
-import { Menu, Layout, Typography } from 'antd'
+import {Col, Row, Typography} from 'antd'
+import Search from 'antd/es/input/Search'
+import {useDispatch} from 'react-redux'
+import {actions} from '../redux/weather/actions'
 
-const {Header} = Layout
 const {Title} = Typography
 
-export const Navbar: React.FC = () => {
+export const Header: React.FC = () => {
+	const dispatch = useDispatch()
+
+	const onSearch = (value: string) => {
+		if (value.length) {
+			dispatch(actions.fetchWeatherRequest(value))
+		}
+	}
+
 	return (
-		<Header>
-			<Title level={4} style={{color: '#fff'}}>Sunny Weather</Title>
-			<Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-				<Menu.Item key="1">nav 1</Menu.Item>
-				<Menu.Item key="2">nav 2</Menu.Item>
-				<Menu.Item key="3">nav 3</Menu.Item>
-			</Menu>
-		</Header>
+		<Row className="weather-card-header">
+			<Col span={12}>
+				<Title level={4}>Weather App</Title>
+			</Col>
+			<Col span={12}>
+				<Search placeholder="Enter your city" onSearch={onSearch} enterButton />
+			</Col>
+		</Row>
 	)
 }
